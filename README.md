@@ -1,7 +1,6 @@
-# rarwe
+# Rock and Roll
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+A learning project used to explore ember.js.
 
 ## Prerequisites
 
