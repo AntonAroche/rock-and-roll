@@ -1,6 +1,6 @@
 # Rock and Roll
 
-A learning project used to explore ember.js.
+A learning project used to explore ember.js, based on the book "Rock&Roll with ember.js" by Balinterdi.
 
 ## Prerequisites
 
