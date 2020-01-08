@@ -1,12 +1,12 @@
 import Controller from "@ember/controller";
-import Band from 'rarwe/models/band';
-import { empty } from '@ember/object/computed';
+import Band from "rarwe/models/band";
+import { empty } from "@ember/object/computed";
 
 export default Controller.extend({
   isAddingBand: false,
-  newBandName: '',
+  newBandName: "",
 
-  isAddButtonDisabled: empty('newBandName'),
+  isAddButtonDisabled: empty("newBandName"),
 
   actions: {
     addBand() {
@@ -14,14 +14,18 @@ export default Controller.extend({
     },
 
     saveBand(event) {
-        event.preventDefault();
-        let newBand = Band.create({name: this.newBandName});
-        this.model.pushObject(newBand);
-        this.set('newBandName', '');
+      event.preventDefault();
+      let newBand = Band.create({ name: this.newBandName });
+      this.model.pushObject(newBand);
+      this.setProperties({
+        newBandName: "",
+        isAddingBand: false
+      });
+      this.transitionToRoute("bands.band.songs", newBand);
     },
 
     cancelAddBand() {
-        this.set("isAddingBand", false);
+      this.set("isAddingBand", false);
     }
   }
 });
