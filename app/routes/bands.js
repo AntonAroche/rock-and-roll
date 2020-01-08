@@ -1,22 +1,7 @@
 import Route from "@ember/routing/route";
-
-import EmberObject, { computed } from '@ember/object';
-import { dasherize } from '@ember/string';
 import { A } from "@ember/array";
-
-let Song = EmberObject.extend({
-  title: "",
-  band: "",
-  rating: 0
-});
-
-let Band = EmberObject.extend({
-  name: '',
-
-  slug: computed('name', function() {
-      return dasherize(this.name);
-  })
-});
+import Band from 'rarwe/models/band';
+import Song from 'rarwe/models/song';
 
 export default Route.extend({
   model() {
