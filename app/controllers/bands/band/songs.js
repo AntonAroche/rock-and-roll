@@ -22,6 +22,10 @@ export default Controller.extend({
 
     cancelAddSong() {
       this.set("isAddingSong", false);
+    },
+
+    updateRating(song, rating) {
+      song.set('rating', rating);
     }
   }
 });
