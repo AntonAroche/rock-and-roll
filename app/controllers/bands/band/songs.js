@@ -25,7 +25,7 @@ export default Controller.extend({
     },
 
     updateRating(song, rating) {
-      song.set('rating', rating);
+      song.set('rating', song.rating == rating ? 0: rating);
     }
   }
 });
