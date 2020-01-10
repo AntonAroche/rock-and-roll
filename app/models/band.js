@@ -1,17 +1,9 @@
-import EmberObject, { computed } from "@ember/object";
-import { dasherize } from "@ember/string";
-export default EmberObject.extend({
-  name: "",
-  description: "",
+import DS from "ember-data";
 
-  init() {
-      this._super(...arguments);
-      if (!this.songs){
-          this.set('songs', []);
-      }
-  },
-  
-  slug: computed("name", function() {
-    return dasherize(this.name);
-  })
+const { Model, attr, hasMany } = DS;
+
+export default Model.extend({
+  name: attr("string"),
+  description: attr("string"),
+  songs: hasMany()
 });
